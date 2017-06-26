@@ -1,4 +1,4 @@
-# Author: Aíquis Gomes (aiquis.gomes@turner.com)
+# Author: Aiquis Gomes (aiquis.gomes[at]turner.com)
 # Date Created: 2017-06-10
 # The script goal is to add all LG IMEI files send by them weekly in only one xlsx file to make it easy to upload to the system.
 # The files they send weekly correspond to the devices production of the week of devices that have access to the EI Plus promotion (3 months of free subscription).
@@ -25,7 +25,7 @@ for file in allFiles:
 imeis = pd.concat(aux_list)
 
 #Deleting the 'SHIPMENT' column that is useless to the system
-imeis.drop('SHIPEMENT', axis = 1, inplace = True)
+imeis.drop('SN', axis = 1, inplace = True)
 
 #Creating the spreadsheet that is going to be uploaded to the system
 writer = pd.ExcelWriter('home/aiquis/EI/' + 'imeis_upload.xlsx', engine = 'xlsxwriter')
